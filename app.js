@@ -3,7 +3,7 @@ var app = express();
 
 
   app.post('/', function (req, res) {
-  console.log(JSON.stringify(req.body));
+  console.log(JSON.stringify(req));
   if(req.body.queryResult.intent.displayName =="Ticket"){
     res.JSON(
       {
