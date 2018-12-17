@@ -1,0 +1,19 @@
+{
+  "name": "first-app",
+  "version": "1.0.0",
+  "description": "node",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4"
+
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "deepa"
+  ],
+  "author": "deepa",
+  "license": "ISC"
+}
