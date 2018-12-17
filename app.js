@@ -3,6 +3,7 @@ var app = express();
 
 
   app.post('/', function (req, res) {
-    res.send('POST request to the homepage')
-  })
+  console.log(JSON.stringify(req.body);
+    res.send('POST request to the homepage');
+  });
 app.listen(8080, () => console.log("listening.."));
