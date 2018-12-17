@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 
-  app.post('/ticket', function (req, res) {
+  app.post('/', function (req, res) {
   console.log(JSON.stringify(req.body));
     res.send('POST request to the homepage');
   });
