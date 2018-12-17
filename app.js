@@ -6,4 +6,4 @@ var app = express();
   console.log(JSON.stringify(req.body));
     res.send('POST request to the homepage');
   });
-app.listen(8080, () => console.log("listening.."));
+app.listen(process.env.PORT, () => console.log("listening.."));
