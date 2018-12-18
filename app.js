@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
     console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
     res.json({
-        "conversationToken": "",
         "expectUserResponse": true,
         "expectedInputs": [
             {
@@ -33,7 +32,6 @@ var bodyParser = require('body-parser');
   else if(req.body.queryResult.intent.displayName =="Ticket"){
     res.json(
       {
-        "conversationToken": "",
         "expectUserResponse": true,
         "expectedInputs": [
             {
