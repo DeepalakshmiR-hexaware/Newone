@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
   app.post('/', function (req, res) {
     console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
-    res.JSON({
+    res.json({
         "conversationToken": "",
         "expectUserResponse": true,
         "expectedInputs": [
