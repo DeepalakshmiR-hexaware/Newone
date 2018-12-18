@@ -31,7 +31,7 @@ var bodyParser = require('body-parser');
     });
   }
   else if(req.body.queryResult.intent.displayName =="Ticket"){
-    res.JSON(
+    res.json(
       {
         "conversationToken": "",
         "expectUserResponse": true,
