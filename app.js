@@ -1,3 +1,4 @@
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -8,17 +9,25 @@ var bodyParser = require('body-parser');
     console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
     res.json({
-   "fulfillmentText":response
-    ,"fulfillmentMessages":[
-        {
-            "text": {
-                "text": [
-                    "Hello I m Responding to intent"
-                ]
+        "expectUserResponse": true,
+        "expectedInputs": [
+            {
+                "inputPrompt": {
+                    "richInitialPrompt": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Howdy! ",
+                                    "displayText": "Howdy!"
+                                }
+                            }
+                        ]
+                        
+                    }
+                }
+                
             }
-        }
-    ]
-    ,"source":""
+        ]
     });
   }
   else if(req.body.queryResult.intent.displayName =="Ticket"){
