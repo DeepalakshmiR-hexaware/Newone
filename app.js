@@ -10,30 +10,21 @@ var bodyParser = require('body-parser');
   if(req.body.queryResult.intent.displayName == "test"){
     console.log("ddd");
     res.json({
+  "payload": {
+    "google": {
       "expectUserResponse": true,
-      "expectedInputs": [
+      "richResponse": {
+        "items": [
           {
-              "inputPrompt": {
-                  "richInitialPrompt": {
-                      "items": [
-                          {
-                              "simpleResponse": {
-                                  "textToSpeech": "Howdy! I can tell you fun facts about almost any number, like 42. What do you have in mind?",
-                                  "displayText": "Howdy! I can tell you fun facts about almost any number. What do you have in mind?"
-                              }
-                          }
-                      ],
-                      "suggestions": []
-                  }
-              },
-              "possibleIntents": [
-                  {
-                      "intent": "actions.intent.TEXT"
-                  }
-              ]
+            "simpleResponse": {
+              "textToSpeech": "this is a simple response"
+            }
           }
-      ]
-  });
+        ]
+      }
+    }
+  }
+});
   }
   else if(req.body.queryResult.intent.displayName =="Ticket"){
     res.json(
