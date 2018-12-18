@@ -1,5 +1,4 @@
 
-
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -11,26 +10,31 @@ var bodyParser = require('body-parser');
   if(req.body.queryResult.intent.displayName == "test"){
     console.log("ddd");
     res.json({
-        "expectUserResponse": false,
-        "expectedInputs": [
-            {
-                "inputPrompt": {
-                    "richInitialPrompt": {
-                        "items": [
-                            {
-                                "simpleResponse": {
-                                    "textToSpeech": "Howdy! ",
-                                    "displayText": "Howdy!"
-                                }
-                            }
-                        ]
-                        
-                    }
-                }
-                
-            }
-        ]
-    });
+      "conversationToken": "",
+      "expectUserResponse": true,
+      "expectedInputs": [
+          {
+              "inputPrompt": {
+                  "richInitialPrompt": {
+                      "items": [
+                          {
+                              "simpleResponse": {
+                                  "textToSpeech": "Howdy! I can tell you fun facts about almost any number, like 42. What do you have in mind?",
+                                  "displayText": "Howdy! I can tell you fun facts about almost any number. What do you have in mind?"
+                              }
+                          }
+                      ],
+                      "suggestions": []
+                  }
+              },
+              "possibleIntents": [
+                  {
+                      "intent": "actions.intent.TEXT"
+                  }
+              ]
+          }
+      ]
+  });
   }
   else if(req.body.queryResult.intent.displayName =="Ticket"){
     res.json(
