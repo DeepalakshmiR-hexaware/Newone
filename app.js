@@ -4,7 +4,32 @@ var app = express();
 
   app.post('/', function (req, res) {
   console.log(req);
-  if(req.body.queryResult.intent.displayName =="Ticket"){
+    console.log(req.body);
+  if(req.body.queryResult.intent.displayName == "test"){
+    res.JSON({
+        "conversationToken": "",
+        "expectUserResponse": true,
+        "expectedInputs": [
+            {
+                "inputPrompt": {
+                    "richInitialPrompt": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Howdy! ",
+                                    "displayText": "Howdy!"
+                                }
+                            }
+                        ]
+                        
+                    }
+                }
+                
+            }
+        ]
+    });
+  }
+  else if(req.body.queryResult.intent.displayName =="Ticket"){
     res.JSON(
       {
         "conversationToken": "",
