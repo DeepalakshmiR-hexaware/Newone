@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
     console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
     res.json({
-        "expectUserResponse": true,
+        "expectUserResponse": false,
         "expectedInputs": [
             {
                 "inputPrompt": {
