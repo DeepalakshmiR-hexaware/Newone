@@ -1,4 +1,5 @@
 
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -8,6 +9,7 @@ var bodyParser = require('body-parser');
   app.post('/', function (req, res) {
     console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
+    console.log("ddd");
     res.json({
         "expectUserResponse": false,
         "expectedInputs": [
