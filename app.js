@@ -3,8 +3,7 @@ var app = express();
 
 
   app.post('/', function (req, res) {
-  console.log(req);
-    console.log(req.body);
+    console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
     res.JSON({
         "conversationToken": "",
