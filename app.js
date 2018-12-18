@@ -10,7 +10,6 @@ var bodyParser = require('body-parser');
   if(req.body.queryResult.intent.displayName == "test"){
     console.log("ddd");
     res.json({
-      "conversationToken": "",
       "expectUserResponse": true,
       "expectedInputs": [
           {
