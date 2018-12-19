@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
   app.post('/', function (req, res) {
     console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
-    console.log("ddd");
     res.json({
       "payload": {
         "google": {
@@ -17,7 +16,8 @@ var bodyParser = require('body-parser');
             "items": [
               {
                 "simpleResponse": {
-                  "textToSpeech": "this is a simple response"
+                  "textToSpeech":"tested",
+                  "displayText": "tested"
                 }
               }
             ]
@@ -36,7 +36,8 @@ var bodyParser = require('body-parser');
               "items": [
                 {
                   "simpleResponse": {
-                    "textToSpeech": "this is a simple response"
+                    "textToSpeech": "Provide depart date",
+                    "displayText": "Provide depart date"
                   }
                 }
               ]
