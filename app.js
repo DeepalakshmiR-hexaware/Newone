@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
   app.use(bodyParser.json());
 
   app.post('/', function (req, res) {
-    console.log("BODY ",req.body);
+    console.log("BODY ",JSON.stringify(req.body));
   if(req.body.queryResult.intent.displayName == "test"){
     res.json({
       "payload": {
