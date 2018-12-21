@@ -49,6 +49,7 @@ var bodyParser = require('body-parser');
     )
   } 
   else if(req.body.queryResult.action == "Ticket.Ticket-custom" ){
+  
     res.json(
       {
         "payload": {
@@ -64,8 +65,8 @@ var bodyParser = require('body-parser');
                 {
                   "basicCard": {
                     "title": "Booking process",
-                    "subtitle":req.body.parameters.class,
-                    "formattedText":req.body.parameters.class
+                    "subtitle":req.body.queryResult.outputContexts.parameters.ticketType,
+                    "formattedText":req.body.queryResult.outputContexts.parameters.ticketType
                   }
                 }
               ]
