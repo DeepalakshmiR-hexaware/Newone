@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
   app.use(bodyParser.json());
 
   app.post('/', function (req, res) {
-    console.log("BODY ",JSON.stringify(req.body));
+    console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
     res.json({
       "payload": {
@@ -47,6 +47,36 @@ var bodyParser = require('body-parser');
       }
      
     )
-  }  
+  } 
+  else if(req.body.queryResult.action == "Ticket.Ticket-custom" ){
+    res.json(
+      {
+        "payload": {
+          "google": {
+            "expectUserResponse": true,
+            "richResponse": {
+              "items": [
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "Please, confirm"
+                  }
+                },
+                {
+                  "basicCard": {
+                    "title": "Booking process",
+                    "subtitle":"req.body.parameters.class",
+                    "image": { },
+              
+                    "imageDisplayOptions": "WHITE"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+
+    )
+  } 
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
