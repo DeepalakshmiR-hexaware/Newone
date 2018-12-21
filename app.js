@@ -64,10 +64,7 @@ var bodyParser = require('body-parser');
                 {
                   "basicCard": {
                     "title": "Booking process",
-                    "subtitle":"req.body.parameters.class",
-                    "image": { },
-              
-                    "imageDisplayOptions": "WHITE"
+                    "subtitle":"req.body.parameters.class"
                   }
                 }
               ]
