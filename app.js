@@ -49,7 +49,7 @@ var bodyParser = require('body-parser');
     )
   } 
   else if(req.body.queryResult.action == "Ticket.Ticket-custom" ){
-  
+  console.log(JSON.stringify(req.body));
     res.json(
       {
         "payload": {
