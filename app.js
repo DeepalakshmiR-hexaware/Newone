@@ -94,6 +94,28 @@ var bodyParser = require('body-parser');
 
     )
   } 
+  else if(req.body.queryResult.action == "Ticket.Ticket-custom.Ticket-custom-custom"){
+    res.json(
+      {
+        "payload": {
+          "google": {
+            "expectUserResponse": true,
+            "richResponse": {
+              "items": [
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "Provide depart date",
+                    "displayText": "Provide depart date"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+     
+    )
+  }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
 
