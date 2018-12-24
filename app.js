@@ -76,7 +76,15 @@ var bodyParser = require('body-parser');
                     "formattedText":"FROM:"+ticketObj.parameters.from.name+'\n'
                                     +"TO:"+ticketObj.parameters.to.name+'\n'
                                     +"Class:"+ticketObj.parameters.Class
-                  }
+                  },
+                  "suggestions": [
+                    {
+                      "title": "Approve"
+                    },
+                    {
+                      "title": "Deny"
+                    }
+                  ]
                 }
               ]
             }
