@@ -53,6 +53,7 @@ var bodyParser = require('body-parser');
   var ticketObj;
   for(var i=0; i<req.body.queryResult.outputContexts.length; i++){
     if(req.body.queryResult.outputContexts[i].name.includes("ticket-followup")){
+      console.log("good");
       ticketObj = ticket-followup ;
     }
   }
@@ -71,8 +72,8 @@ var bodyParser = require('body-parser');
                 {
                   "basicCard": {
                     "title": "Booking process",
-                    "subtitle":ticketObj.parameters.ticketType,
-                    "formattedText":ticketObj.parameters.ticketType
+                    "subtitle":ticketObj.parameters.TicketType,
+                    "formattedText":ticketObj.parameters.TicketType
                   }
                 }
               ]
