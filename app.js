@@ -54,7 +54,7 @@ var bodyParser = require('body-parser');
   for(var i=0; i<req.body.queryResult.outputContexts.length; i++){
     if(req.body.queryResult.outputContexts[i].name.includes("ticket-followup")){
       console.log("good");
-      ticketObj = ticket-followup ;
+      ticketObj = req.body.queryResult.outputContexts[i];
     }
   }
     res.json(
