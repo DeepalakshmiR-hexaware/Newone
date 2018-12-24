@@ -50,6 +50,12 @@ var bodyParser = require('body-parser');
   } 
   else if(req.body.queryResult.action == "Ticket.Ticket-custom" ){
   console.log("DD",JSON.stringify(req.body));
+  var ticketObj;
+  for(var i=0; i<req.body.queryResult.outputContexts.length; i++){
+    if(req.body.queryResult.outputContexts[i].name == projects/chatbot-eb2b5/agent/sessions/ABwppHFGsQicFK1vpQDQvNgYMxhbm8CcgB_lFJM-RyfvARSv0N5mC48aS5ILNBvURCyxmlrjnSFfhNL7ew/contexts/ticket-followup ){
+      ticketObj = projects/chatbot-eb2b5/agent/sessions/ABwppHFGsQicFK1vpQDQvNgYMxhbm8CcgB_lFJM-RyfvARSv0N5mC48aS5ILNBvURCyxmlrjnSFfhNL7ew/contexts/ticket-followup ;
+    }
+  }
     res.json(
       {
         "payload": {
@@ -65,8 +71,8 @@ var bodyParser = require('body-parser');
                 {
                   "basicCard": {
                     "title": "Booking process",
-                    "subtitle":req.body.queryResult.outputContexts.parameters.ticketType,
-                    "formattedText":req.body.queryResult.outputContexts.parameters.ticketType
+                    "subtitle":ticketObj.parameters.ticketType,
+                    "formattedText":ticketObj.parameters.ticketType
                   }
                 }
               ]
