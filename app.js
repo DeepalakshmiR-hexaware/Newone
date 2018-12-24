@@ -73,7 +73,7 @@ var bodyParser = require('body-parser');
                   "basicCard": {
                     "title": "Booking process",
                     "subtitle":ticketObj.parameters.TicketType,
-                    "formattedText":ticketObj.parameters.TicketType
+                    "formattedText":"FROM:"+ticketObj.parameters.from+"TO:"+ticketObj.parameters.to
                   }
                 }
               ]
