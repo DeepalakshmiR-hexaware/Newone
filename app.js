@@ -52,8 +52,8 @@ var bodyParser = require('body-parser');
   console.log("DD",JSON.stringify(req.body));
   var ticketObj;
   for(var i=0; i<req.body.queryResult.outputContexts.length; i++){
-    if(req.body.queryResult.outputContexts[i].name == projects/chatbot-eb2b5/agent/sessions/ABwppHFGsQicFK1vpQDQvNgYMxhbm8CcgB_lFJM-RyfvARSv0N5mC48aS5ILNBvURCyxmlrjnSFfhNL7ew/contexts/ticket-followup ){
-      ticketObj = projects/chatbot-eb2b5/agent/sessions/ABwppHFGsQicFK1vpQDQvNgYMxhbm8CcgB_lFJM-RyfvARSv0N5mC48aS5ILNBvURCyxmlrjnSFfhNL7ew/contexts/ticket-followup ;
+    if(req.body.queryResult.outputContexts[i].name.includes("ticket-followup")){
+      ticketObj = ticket-followup ;
     }
   }
     res.json(
@@ -85,3 +85,8 @@ var bodyParser = require('body-parser');
   } 
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
+
+
+
+
+
