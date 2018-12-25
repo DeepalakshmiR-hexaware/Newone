@@ -46,7 +46,7 @@ var bodyParser = require('body-parser');
                       {
                         "title": "Title of item 1",
                         "openUrlAction": {
-                          "url": "https://stationh.hexaware.com/NewStationH/Content/Index#/index/webapps"
+                          "url": "https://www.google.com/"
                         },
                         "description": "Description of item 1",
                         "footer": "Item 1 footer",
@@ -58,7 +58,7 @@ var bodyParser = require('body-parser');
                       {
                         "title": "Title of item 2",
                         "openUrlAction": {
-                          "url": "https://stationh.hexaware.com/NewStationH/Content/Index#/index/webapps"
+                          "url": "https://stationh.hexaware.com"
                         },
                         "description": "Description of item 2",
                         "footer": "Item 2 footer",
