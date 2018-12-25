@@ -107,7 +107,7 @@ var bodyParser = require('body-parser');
                 {
                   "simpleResponse": {
                     "textToSpeech": "Booking"+req.body.queryResult.parameters.success+"success",
-                    "displayText": "Booking"+req.body.queryResult.parameters.success+"success" 
+                    "displayText": "Booking\t"+req.body.queryResult.parameters.success+"\tsuccess" 
                   }
                 }
               ]
