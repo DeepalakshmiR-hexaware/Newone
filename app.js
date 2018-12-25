@@ -95,6 +95,8 @@ var bodyParser = require('body-parser');
     )
   } 
   else if(req.body.queryResult.action == "Ticket.Ticket-custom.Ticket-custom-custom"){
+    console.log("JJ",JSON.stringify(req.body));
+    if(req.body.queryResult.parameters == "success")
     res.json(
       {
         "payload": {
@@ -104,8 +106,8 @@ var bodyParser = require('body-parser');
               "items": [
                 {
                   "simpleResponse": {
-                    "textToSpeech": "Provide depart date",
-                    "displayText": "Provide depart date"
+                    "textToSpeech": "Booking success" ,
+                    "displayText": "Booking success"
                   }
                 }
               ]
