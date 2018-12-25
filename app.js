@@ -70,6 +70,17 @@ var bodyParser = require('body-parser');
                         "accessibilityText": "second alt"
                       },
                       "title": "second title"
+                    },
+                    {
+                      "optionInfo": {
+                        "key": "three"
+                      },
+                      "description": "third description",
+                      "image": {
+                        "url": "https://www.google.com/logos/doodles/2018/holidays-2018-northern-hemisphere-day-3-5708260869931008-law.gif",
+                        "accessibilityText": "merry christmas"
+                      },
+                      "title": "merry christmas"
                     }
                   ]
                 }
