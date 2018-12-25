@@ -16,8 +16,9 @@ var bodyParser = require('body-parser');
             "items": [
               {
                 "simpleResponse": {
-                  "ssml":"<speak>tested <break time=\"500ms\"/><say-as interpret-as=\"characters\">SSML</say-as></speak>",
-                  "displayText": "tested"
+                  // "ssml":"<speak>tested <break time=\"500ms\"/><say-as interpret-as=\"characters\">SSML</say-as></speak>",
+                  "talkToSpeech":"tested"
+                  // "displayText": "tested"
                 }
               }
             ]
