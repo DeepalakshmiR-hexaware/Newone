@@ -39,43 +39,45 @@ var bodyParser = require('body-parser');
                     "textToSpeech": "Provide depart date",
                     "displayText": "Provide depart date"
                   }
-                },
-                {
-                  "carouselBrowse": {
-                    "items": [
-                      {
-                        "title": "Title of item 1",
-                        "openUrlAction": {
-                          "url": "https://www.google.com/"
-                        },
-                        "description": "Description of item 1",
-                        "footer": "Item 1 footer",
-                        "image": {
-                          "url": "https://developers.google.com/actions/assistant.png",
-                          "accessibilityText": "Google Assistant Bubbles"
-                        }
-                      },
-                      {
-                        "title": "Title of item 2",
-                        "openUrlAction": {
-                          "url": "https://stationh.hexaware.com"
-                        },
-                        "description": "Description of item 2",
-                        "footer": "Item 2 footer",
-                        "image": {
-                          "url": "https://developers.google.com/actions/assistant.png",
-                          "accessibilityText": "Google Assistant Bubbles"
-                        }
-                      }
-                    ]
-                  }
                 }
               ]
+            },
+            "systemIntent": {
+              "intent": "actions.intent.OPTION",
+              "data": {
+                "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+                "listSelect": {
+                  "title": "Hello",
+                  "items": [
+                    {
+                      "optionInfo": {
+                        "key": "first title key"
+                      },
+                      "description": "first description",
+                      "image": {
+                        "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+                        "accessibilityText": "first alt"
+                      },
+                      "title": "first title"
+                    },
+                    {
+                      "optionInfo": {
+                        "key": "second"
+                      },
+                      "description": "second description",
+                      "image": {
+                        "url": "https://lh3.googleusercontent.com/Nu3a6F80WfixUqf_ec_vgXy_c0-0r4VLJRXjVFF_X_CIilEu8B9fT35qyTEj_PEsKw",
+                        "accessibilityText": "second alt"
+                      },
+                      "title": "second title"
+                    }
+                  ]
+                }
+              }
             }
           }
         }
-      }
-     
+      } 
     )
   } 
   else if(req.body.queryResult.action == "Ticket.Ticket-custom" ){
