@@ -35,10 +35,10 @@ var bodyParser = require('body-parser');
             "richResponse": {
               "items": [
                 {
-                  "simpleResponse": {
-                    "textToSpeech": "Provide depart date",
-                    "displayText": "Provide depart date"
-                  },
+                  // "simpleResponse": {
+                  //   "textToSpeech": "Provide depart date",
+                  //   "displayText": "Provide depart date"
+                  // },
                   "carouselBrowse": {
                     "items": [
                       {
