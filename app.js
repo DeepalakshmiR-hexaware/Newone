@@ -73,8 +73,8 @@ var bodyParser = require('body-parser');
                   "basicCard": {
                     "title": "Booking process",
                     "subtitle":ticketObj.parameters.TicketType,
-                    "formattedText":"FROM:"+ticketObj.parameters.from.name+'\n'
-                                    +"TO:"+ticketObj.parameters.to.name+'\n'
+                    "formattedText":"FROM:"+ticketObj.parameters.from.name+"\n"
+                                    +"TO:"+ticketObj.parameters.to.name+"\n"
                                     +"Class:"+ticketObj.parameters.Class
                   }
                 }
@@ -107,7 +107,7 @@ var bodyParser = require('body-parser');
                 {
                   "simpleResponse": {
                     "textToSpeech": "Booking"+req.body.queryResult.parameters.success+"success",
-                    "displayText": "Booking\t"+req.body.queryResult.parameters.success+"\tsuccess" 
+                    "displayText": "Booking"+"\n"+req.body.queryResult.parameters.success+"\n"+"success" 
                   }
                 }
               ]
