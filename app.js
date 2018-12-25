@@ -117,7 +117,27 @@ var bodyParser = require('body-parser');
       }
      
     )
-  }
+  } else { 
+     res.json(
+    {
+      "payload": {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": "Booking"+req.body.queryResult.parameters.deny+"success",
+                  "displayText": "Booking "+req.body.queryResult.parameters.deny+" success" 
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+   
+  ) }
 }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
