@@ -96,7 +96,7 @@ var bodyParser = require('body-parser');
   } 
   else if(req.body.queryResult.action == "Ticket.Ticket-custom.Ticket-custom-custom"){
     console.log("JJ",JSON.stringify(req.body));
-    if(req.body.queryResult.parameters == "success")
+    if(req.body.queryResult.parameters.success == "Approve"){
     res.json(
       {
         "payload": {
@@ -118,6 +118,7 @@ var bodyParser = require('body-parser');
      
     )
   }
+}
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
 
