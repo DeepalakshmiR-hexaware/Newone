@@ -189,7 +189,6 @@ var jsonData = require('./list.json');
     }
     
    )
-   console.log("hal",JSON.stringify(hal));
  }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
