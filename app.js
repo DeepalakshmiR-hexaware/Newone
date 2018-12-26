@@ -168,7 +168,7 @@ var jsonData = require('./list.json');
             "items": [
               {
                 "simpleResponse": {
-                  "textToSpeech": "Choose a item"
+                  "textToSpeech": "Here your booking list"
                 }
               }
             ]
