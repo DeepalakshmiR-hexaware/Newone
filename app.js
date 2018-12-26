@@ -155,10 +155,9 @@ var jsonData = require('./list.json');
           "accessibilityText": "first alt"
         },
         "title":jsonData.Bookings[i].TicketType
-      });
-
-    
+      });   
    }
+   console.log(JSON.parse(listItems));
    res.json(
     {
       "payload": {
