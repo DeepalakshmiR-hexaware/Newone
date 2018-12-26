@@ -150,10 +150,7 @@ var jsonData = require('./list.json');
           "key": jsonData.Bookings[i].id
         },
         "description": "FROM:"+jsonData.Bookings[i].from+"TO:"+jsonData.Bookings[i].to,
-        "image": {
-          "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
-          "accessibilityText": "first alt"
-        },
+
         "title":jsonData.Bookings[i].TicketType
       });   
    }
@@ -168,7 +165,7 @@ var jsonData = require('./list.json');
             "items": [
               {
                 "simpleResponse": {
-                  "textToSpeech": "Here your booking list"
+                  "textToSpeech": "Here your's booking list"
                 }
               }
             ]
