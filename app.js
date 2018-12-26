@@ -141,7 +141,44 @@ var jsonData = require('./list.json');
   ) }
 }
  else if(req.body.queryResult.intent.displayName == "BookingList"){
-   console.log("ok",JSON.stringify(jsonData));
+   var obj = JSON.parse(jsonData);
+   var listItems = [];
+   for( var i=0; i<obj.Bookings[id]; i++){
+     console.log("hhh");
+     listItems[optionInfo.key]=obj.Bookings[id];
+     listItems[description]=obj.Bookings[from]+obj.Bookings[to];
+     listItems[title]=obj.Bookings[TicketType];
+   }
+   res.json(
+    {
+      "payload": {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": "Choose a item"
+                }
+              }
+            ]
+          },
+          "systemIntent": {
+            "intent": "actions.intent.OPTION",
+            "data": {
+              "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+              "listSelect": {
+                "title": "Hello",
+                
+                "items": listItems
+              }
+            }
+          }
+        }
+      }
+    }
+    
+   )
  }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
