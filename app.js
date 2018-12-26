@@ -157,6 +157,7 @@ var jsonData = require('./list.json');
         "title":jsonData.Bookings[i].TicketType
       });   
    }
+   
    console.log(JSON.stringify(listItems));
    var hal=res.json(
     {
@@ -188,7 +189,7 @@ var jsonData = require('./list.json');
     }
     
    )
-   console.log("hal",hal);
+   console.log("hal",JSON.stringify(hal));
  }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
