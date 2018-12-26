@@ -141,13 +141,23 @@ var jsonData = require('./list.json');
   ) }
 }
  else if(req.body.queryResult.intent.displayName == "BookingList"){
-   var obj = console.log(JSON.stringify(jsonData));
+  
+
    var listItems = [];
-   for( var i=0; i<obj.Bookings.length; i++){
-     console.log("hhh");
-     listItems["optionInfo.key"]=obj.Bookings[i].id;
-     listItems["description"]=obj.Bookings[i].from+obj.Bookings[i].to;
-     listItems["title"]=obj.Bookings[i].TicketType;
+   for( var i=0; i<jsonData.Bookings.length; i++){     
+      listItems.push({
+        "optionInfo": {
+          "key": jsonData.Bookings[i].id
+        },
+        "description": jsonData.Bookings[i].from+jsonData.Bookings[i].to,
+        "image": {
+          "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+          "accessibilityText": "first alt"
+        },
+        "title":jsonData.Bookings[i].TicketType
+      });
+
+    
    }
    res.json(
     {
@@ -170,7 +180,7 @@ var jsonData = require('./list.json');
               "listSelect": {
                 "title": "Hello",
                 
-                "items": listItems
+                "items":listItems
               }
             }
           }
