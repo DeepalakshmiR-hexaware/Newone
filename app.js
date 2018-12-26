@@ -143,11 +143,11 @@ var jsonData = require('./list.json');
  else if(req.body.queryResult.intent.displayName == "BookingList"){
    var obj = JSON.stringify(jsonData);
    var listItems = [];
-   for( var i=0; i<obj.Bookings[id]; i++){
+   for( var i=0; i<obj.Bookings["id"]; i++){
      console.log("hhh");
-     listItems[optionInfo.key]=obj.Bookings[id];
-     listItems[description]=obj.Bookings[from]+obj.Bookings[to];
-     listItems[title]=obj.Bookings[TicketType];
+     listItems["optionInfo.key"]=obj.Bookings["id"];
+     listItems["description"]=obj.Bookings["from"]+obj.Bookings["to"];
+     listItems["title"]=obj.Bookings["TicketType"];
    }
    res.json(
     {
