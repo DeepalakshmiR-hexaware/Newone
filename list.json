@@ -1,0 +1,22 @@
+{
+   "Book": [
+       {
+           "id":1,
+           "from":"chennai airport",
+           "to": "Heatrow airport",
+           "TicketType":"Round trip",
+           "Class": "First class",
+           "Travellers":4,
+           "Price":50000
+       },
+       {
+           "id":2,
+           "from":"Chhatrapati Shivaji International Airport",
+           "to": "Chennai airport",
+           "TicketType":"One Way",
+           "Class":"Business class",
+           "Travellers":3,
+           "Price":20000
+       }
+   ]
+}

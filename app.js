@@ -96,6 +96,7 @@ var bodyParser = require('body-parser');
   } 
   else if(req.body.queryResult.action == "Ticket.Ticket-custom.Ticket-custom-custom"){
     console.log("JJ",JSON.stringify(req.body));
+
     if(req.body.queryResult.parameters.success == "Approve"){
     res.json(
       {
@@ -139,6 +140,10 @@ var bodyParser = require('body-parser');
    
   ) }
 }
+ else if(req.body.queryResult.intent.displayName == "BookingList"){
+   var jsonData = require('./list.json');
+   console.log("JSON.stringify(jsonData");
+ }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
 
