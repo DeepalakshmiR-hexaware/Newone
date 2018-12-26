@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-
+var jsonData = require('./list.json');
   app.use(bodyParser.json());
 
   app.post('/', function (req, res) {
@@ -141,8 +141,7 @@ var bodyParser = require('body-parser');
   ) }
 }
  else if(req.body.queryResult.intent.displayName == "BookingList"){
-   var jsonData = require('./list.json');
-   console.log("JSON.stringify(jsonData");
+   console.log("ok",JSON.stringify(jsonData));
  }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
