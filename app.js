@@ -144,7 +144,7 @@ var jsonData = require('./list.json');
   
 
    var listItems = [];
-   for( var i=0; i<jsonData.Bookings.length; i++){     
+   for( var i=1; i<=jsonData.Bookings.length; i++){     
       listItems.push({
         "optionInfo": {
           "key": jsonData.Bookings[i].id
