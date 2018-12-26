@@ -141,7 +141,7 @@ var jsonData = require('./list.json');
   ) }
 }
  else if(req.body.queryResult.intent.displayName == "BookingList"){
-   var obj = JSON.stringify(jsonData);
+   var obj = console.log(JSON.stringify(jsonData));
    var listItems = [];
    for( var i=0; i<obj.Bookings.length; i++){
      console.log("hhh");
