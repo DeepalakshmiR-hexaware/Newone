@@ -149,7 +149,7 @@ var jsonData = require('./list.json');
         "optionInfo": {
           "key": jsonData.Bookings[i].id
         },
-        "description": "FROM:"+jsonData.Bookings[i].from+"TO:"+jsonData.Bookings[i].to+"PRICE:"+jsonData.Bookings[i].Price,
+        "description": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to+" PRICE:"+jsonData.Bookings[i].Price,
         "image": {
           "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
           "accessibilityText": "first alt"
