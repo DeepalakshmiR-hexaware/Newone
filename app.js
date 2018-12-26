@@ -157,7 +157,7 @@ var jsonData = require('./list.json');
         "title":jsonData.Bookings[i].TicketType
       });   
    }
-   console.log(JSON.parse(listItems));
+   console.log(JSON.stringify(listItems));
    res.json(
     {
       "payload": {
