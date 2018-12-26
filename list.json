@@ -3,7 +3,7 @@
        {
            "id":1,
            "from":"chennai airport",
-           "to": "Heatrow airport",
+           "to": "Heathrow airport",
            "TicketType":"Round trip",
            "Class": "First class",
            "Travellers":4,
@@ -11,7 +11,7 @@
        },
        {
            "id":2,
-           "from":"Chhatrapati Shivaji International Airport",
+           "from":"Chatrapati Shivaji International Airport",
            "to": "Chennai airport",
            "TicketType":"One Way",
            "Class":"Business class",

@@ -149,7 +149,7 @@ var jsonData = require('./list.json');
         "optionInfo": {
           "key": jsonData.Bookings[i].id
         },
-        "description": jsonData.Bookings[i].from+jsonData.Bookings[i].to,
+        "description": "FROM:"+jsonData.Bookings[i].from+"TO:"+jsonData.Bookings[i].to,
         "image": {
           "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
           "accessibilityText": "first alt"
@@ -158,7 +158,7 @@ var jsonData = require('./list.json');
       });   
    }
    console.log(JSON.stringify(listItems));
-   res.json(
+   var hal=res.json(
     {
       "payload": {
         "google": {
@@ -188,6 +188,7 @@ var jsonData = require('./list.json');
     }
     
    )
+   console.log("hal",hal);
  }
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
