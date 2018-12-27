@@ -191,7 +191,8 @@ var jsonData = require('./list.json');
  else if(req.body.queryResult.action == "BookingList.BookingList-custom"){
    console.log("okk",JSON.stringify(req.body));
   var showItems = [];
-  if(jsonData.Bookings[i].id == req.body.parameters.number){  
+  for( var i=0; i<jsonData.Bookings.length; i++){  
+  if(req.body.parameters.number == jsonData.Bookings[i].id){  
     showItems.push({
       "simpleResponse":{
       "textToSpeech": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
@@ -202,6 +203,7 @@ var jsonData = require('./list.json');
     })
 
   }
+}
     res.json( {
     "payload": {
       "google": {
