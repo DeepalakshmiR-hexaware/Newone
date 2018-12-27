@@ -191,7 +191,7 @@ var jsonData = require('./list.json');
  else if(req.body.queryResult.action == "BookingList.BookingList-custom"){
    console.log("okk",JSON.stringify(req.body));
   var showItems = [];
-  for( var i=0; i<jsonData.Bookings.length; i++){  
+  for( var i=0; i<jsonData.Bookings.length+1; i++){  
   if(req.body.queryResult.parameters.number == jsonData.Bookings[i].id){  
     showItems.push({
       "simpleResponse":{
