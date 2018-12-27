@@ -194,7 +194,7 @@ var jsonData = require('./list.json');
   for( var i=0; i<jsonData.Bookings.length; i++){  
     for(var j=0; j<req.body.queryResult.outputContexts.length; i++){
       if(req.body.queryResult.outputContexts[i].name.includes("actions_intent_option")){
-        if(req.body.queryResult.outputContexts[i].parameters.number == jsonData.Bookings[i].id){  
+        if(req.body.queryResult.outputContexts[i].parameters.option == jsonData.Bookings[i].id){  
     showItems.push({
       "simpleResponse":{
       "textToSpeech": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
