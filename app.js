@@ -190,6 +190,7 @@ var jsonData = require('./list.json');
  }
 
  else if(req.body.queryResult.action == "BookingList.BookingList-custom"){
+   console.log("okk",JSON.stringify(req.body));
   var showItems = {};
   for( var i=0; i<jsonData.Bookings.length; i++){  
     showItems.push({
