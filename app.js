@@ -147,7 +147,7 @@ var jsonData = require('./list.json');
         "optionInfo": {
           "key": jsonData.Bookings[i].id
         },
-        "description": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to+" PRICE:"+jsonData.Bookings[i].Price,
+        "description": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
         "image": {
           "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
           "accessibilityText": "first alt"
@@ -188,6 +188,33 @@ var jsonData = require('./list.json');
     
    )
  }
+
+ else if(req.body.queryResult.action == "BookingList.BookingList-custom"){
+  var showItems = {};
+  for( var i=0; i<jsonData.Bookings.length; i++){  
+    showItems.push({
+      // "textToSpeech": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
+      "displayText": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to+" TicketType:"
+                      +jsonData.Bookings[i].TicketType+" class:"+jsonData.Bookings[i].Class+" TRAVELLERS:"+jsonData.Bookings[i].Travellers
+                      +" PRICE:"+jsonData.Bookings[i].Price
+    })
+
+  }
+    res.json( {
+    "payload": {
+      "google": {
+        "expectUserResponse": true,
+        "richResponse": {
+          "items": [
+            {
+              "simpleResponse": showItems
+            }
+          ]
+        }
+      }
+    }
+  }  
+ )}
   });
 app.listen(process.env.PORT, () => console.log("listening.."));
 
