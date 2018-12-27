@@ -190,13 +190,15 @@ var jsonData = require('./list.json');
  }
  else if(req.body.queryResult.action == "BookingList.BookingList-custom"){
    console.log("okk",JSON.stringify(req.body));
-  var showItems = {};
+  var showItems = [];
   for( var i=0; i<jsonData.Bookings.length; i++){  
     showItems.push({
+      "simpleResponse":{
       "textToSpeech": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
       "displayText": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to+" TicketType:"
                       +jsonData.Bookings[i].TicketType+" class:"+jsonData.Bookings[i].Class+" TRAVELLERS:"+jsonData.Bookings[i].Travellers
                       +" PRICE:"+jsonData.Bookings[i].Price
+      }
     })
 
   }
@@ -205,11 +207,7 @@ var jsonData = require('./list.json');
       "google": {
         "expectUserResponse": true,
         "richResponse": {
-          "items": [
-            {
-              "simpleResponse": showItems
-            }
-          ]
+          "items": showItems
         }
       }
     }
