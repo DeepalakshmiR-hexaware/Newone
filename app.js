@@ -192,9 +192,7 @@ var jsonData = require('./list.json');
    console.log("okk",JSON.stringify(req.body));
   var showItems = [];
   for( var i=0; i<jsonData.Bookings.length; i++){  
-    for(var j=0; j<req.body.queryResult.outputContexts.length; i++){
-      if(req.body.queryResult.outputContexts[i].name.includes("actions_intent_option")){
-        if(req.body.queryResult.outputContexts[i].parameters.option == jsonData.Bookings[i].id){  
+  if(req.body.queryResult.parameters.number == jsonData.Bookings[i].id){  
     showItems.push({
       "simpleResponse":{
       "textToSpeech": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
@@ -203,8 +201,6 @@ var jsonData = require('./list.json');
                       +" PRICE:"+jsonData.Bookings[i].Price
       }
     })
-    }
-   }
 
   }
 }
