@@ -192,7 +192,7 @@ var jsonData = require('./list.json');
    console.log("okk",JSON.stringify(req.body));
   var showItems = [];
   for( var i=0; i<jsonData.Bookings.length; i++){  
-  if(req.body.parameters.number == jsonData.Bookings[i].id){  
+  if(req.body.queryResult.parameters.number == jsonData.Bookings[i].id){  
     showItems.push({
       "simpleResponse":{
       "textToSpeech": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
