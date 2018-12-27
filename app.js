@@ -204,6 +204,7 @@ var jsonData = require('./list.json');
 
   }
 }
+console.log("show items",JSON.stringify(showItems));
     res.json( {
     "payload": {
       "google": {
