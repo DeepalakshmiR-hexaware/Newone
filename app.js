@@ -188,7 +188,7 @@ var jsonData = require('./list.json');
     
    )
  }
-
+console.log("bad",JSON.stringify(req.body));
  else if(req.body.queryResult.action == "BookingList.BookingList-custom"){
    console.log("okk",JSON.stringify(req.body));
   var showItems = {};
