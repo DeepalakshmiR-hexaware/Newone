@@ -190,11 +190,11 @@ var jsonData = require('./list.json');
  }
  else if(req.body.queryResult.action == "BookingList.BookingList-custom"){
    console.log("okk",JSON.stringify(req.body));
-  var showItems = [];
+   var showItems = [];
   if(req.body.queryResult.parameters.number.length>0){
     console.log("number",req.body.queryResult.parameters.number.length);
     num = req.body.queryResult.parameters.number;
-  }else if(req.body.queryResult.parameters.num.length>0){
+  } else if(req.body.queryResult.parameters.num.length>0){
     console.log("num",req.body.queryResult.parameters.num.length);
     num = req.body.queryResult.parameters.num;
   }
@@ -203,12 +203,11 @@ var jsonData = require('./list.json');
     showItems.push({
       "simpleResponse":{
       "textToSpeech": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to,
-      "displayText": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to+" TicketType:"
-                      +jsonData.Bookings[i].TicketType+" class:"+jsonData.Bookings[i].Class+" TRAVELLERS:"+jsonData.Bookings[i].Travellers
+      "displayText": "FROM:"+jsonData.Bookings[i].from+" TO:"+jsonData.Bookings[i].to+" TICKETTYPE:"
+                      +jsonData.Bookings[i].TicketType+" CLASS:"+jsonData.Bookings[i].Class+" TRAVELLERS:"+jsonData.Bookings[i].Travellers
                       +" PRICE:"+jsonData.Bookings[i].Price
-      }
+       }
     })
-
   }
 }
 console.log("show items",JSON.stringify(showItems));
@@ -223,7 +222,7 @@ console.log("show items",JSON.stringify(showItems));
     }
   }  
  )}
-  });
+ });
 app.listen(process.env.PORT, () => console.log("listening.."));
 
 
