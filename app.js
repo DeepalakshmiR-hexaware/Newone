@@ -141,8 +141,6 @@ var jsonData = require('./list.json');
   ) }
 }
  else if(req.body.queryResult.intent.displayName == "BookingList"){
-  
-
    var listItems = [];
    for( var i=0; i<jsonData.Bookings.length; i++){     
       listItems.push({
@@ -154,12 +152,12 @@ var jsonData = require('./list.json');
           "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
           "accessibilityText": "first alt"
         },
-        "title":jsonData.Bookings[i].TicketType
+        "title":jsonData.Bookings[i].id
       });   
    }
    
    console.log(JSON.stringify(listItems));
-   var hal=res.json(
+   res.json(
     {
       "payload": {
         "google": {
