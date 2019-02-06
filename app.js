@@ -3,8 +3,10 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var jsonData = require('./list.json');
-  app.use(bodyParser.json());
+var fs = require('fs');
+app.use(bodyParser.json());
 
+ 
   app.post('/', function (req, res) {
     console.log("BODY ",req.body);
   if(req.body.queryResult.intent.displayName == "test"){
@@ -208,6 +210,16 @@ var jsonData = require('./list.json');
                       +" PRICE:"+jsonData.Bookings[i].Price
        }
     })
+    var data = {"bookings":[]};
+
+    fs.readFile('temp.txt', 'utf-8' ,function(err, buf) { 
+      console.log(buf.toString());
+      })
+    data.bookings.push("textToSpeech");
+    fs.writeFile('temp.txt', JSON.stringify(data), function(err, data){
+      if (err) console.log(err);
+      console.log("Successfully Written to File.");
+    });
   }
 }
 console.log("show items",JSON.stringify(showItems));
@@ -223,6 +235,7 @@ console.log("show items",JSON.stringify(showItems));
   }  
  )}
  });
+ 
 app.listen(process.env.PORT, () => console.log("listening.."));
 
 
